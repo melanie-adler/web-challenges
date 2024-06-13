@@ -17,3 +17,15 @@ lightModeButton.addEventListener("click", () => {
 toogleModeButton.addEventListener("click", () => {
   bodyElement.classList.toggle("dark");
 });
+
+const melanie = {
+  open: false,
+  init() {
+    toogleModeButton.addEventListener("click", (e) => {
+      e.target.style.backgroundColor = "red";
+      console.log(this);
+    });
+  },
+};
+
+melanie.init();

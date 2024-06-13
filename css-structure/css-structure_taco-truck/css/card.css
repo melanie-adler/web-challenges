@@ -1,0 +1,21 @@
+.card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  height: 170px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  line-height: 1;
+  margin: 0;
+}
+
+.card h3 {
+  margin: 0;
+  padding-block: 20px;
+}
+
+.card p,
+.card h4 {
+  margin: 0;
+  padding-block: 2px;
+  font-weight: normal;
+}

@@ -1,0 +1,13 @@
+header h1 {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  width: fit-content;
+  padding: 20px;
+}
+
+main h2 {
+  background-color: var(--main-title-bg);
+  color: var(--main-text);
+  width: fit-content;
+  padding: 10px;
+}

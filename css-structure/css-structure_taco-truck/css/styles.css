@@ -1,0 +1,30 @@
+/* -------------------------------------------------------- */
+/* You will need to add more imports eventually.
+/* -------------------------------------------------------- */
+
+@import "./theme.css";
+@import "./header.css";
+@import "./card.css";
+@import "./utils.css";
+
+/* ------------------------------------------------------------------------------ */
+/* You don't need to edit the code for the * universal selector and the body.
+/* ------------------------------------------------------------------------------ */
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  height: 100vh;
+  font-family: system-ui;
+  background: var(--body-bg);
+}
+
+header,
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
