@@ -26,7 +26,7 @@
       <form data-js="form">
         <fieldset>
           <legend>Personal Information</legend>
-          <label for="first-name">First Name *</label>
+          <label for="first-name" class="required">First Name</label>
           <input
             type="text"
             name="firstName"
@@ -37,7 +37,7 @@
             required
           />
 
-          <label for="last-name">Last Name *</label>
+          <label for="last-name" class="required">Last Name</label>
           <input
             type="text"
             name="lastName"
@@ -91,7 +91,7 @@
           <label for="order-date">Order Date</label>
           <input type="date" name="orderDate" id="order-date" />
 
-          <label for="terms-of-service">
+          <label for="terms-of-service" class="required">
             <input
               type="checkbox"
               name="terms-of-service"
@@ -104,8 +104,8 @@
               target="_blank"
               rel="noreferrer noopener"
             >
-              (click here for more info) </a
-            >*
+              (click here for more info)
+            </a>
           </label>
         </fieldset>
 
