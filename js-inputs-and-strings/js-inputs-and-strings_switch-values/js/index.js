@@ -32,9 +32,7 @@ lowercaseButton.addEventListener("click", () => {
 });
 
 upperLowerSwitch.addEventListener("click", () => {
-  const newFirstInput = secondInput.value;
-  const newSecondInput = firstInput.value;
-
-  firstInput.value = newFirstInput;
-  secondInput.value = newSecondInput;
+  const newFirstValue = firstInput.value;
+  firstInput.value = secondInput.value;
+  secondInput.value = newFirstValue;
 });
