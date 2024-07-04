@@ -37,11 +37,15 @@ const questionsAndAnswersTogether = cards.map((card) => {
 console.log(questionsAndAnswersTogether);
 
 // [{ question: 'How often can I use <header>?', answer: 'As often as you like.'}, {...}]
-const questionAndAnswer = cards.map((card) => {
+const questionAndAnswer = cards.map((card, index) => {
   const object = {};
+  // const object = {question: card.question, answer: card.answer};
 
-  object.question = card.question;
-  object.answer = card.answer;
+  // object.question = card.question;
+  // object.answer = card.answer;
+
+  object[`question${index}`] = card.question;
+  object[`answer${index}`] = card.answer;
 
   return object;
 });
