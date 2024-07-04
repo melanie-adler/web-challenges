@@ -39,17 +39,23 @@ const allCardsThatAreNotBookmarked = cards.filter((card) => {
 });
 // console.log(allCardsThatAreNotBookmarked);
 
-const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((card) => {
-  if (
+// const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((card) => {
+//   if (
+//     (card.tags.includes("html") || card.tags.includes("js")) &&
+//     card.isBookmarked
+//   ) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// });
+const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter(
+  (card) =>
     (card.tags.includes("html") || card.tags.includes("js")) &&
     card.isBookmarked
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-});
-console.log(allCardsWithTagsHTMLOrJSThatAreBookmarked);
+);
+
+// console.log(allCardsWithTagsHTMLOrJSThatAreBookmarked);
 
 export {
   onlyCardWithIdTwo,
