@@ -42,11 +42,11 @@ const allCardsThatAreNotBookmarked = cards.filter((card) => {
 const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((card) => {
   if (
     (card.tags.includes("html") || card.tags.includes("js")) &&
-    card.isBookmarked === true
+    card.isBookmarked
   ) {
-    return card;
+    return true;
   } else {
-    return 0;
+    return false;
   }
 });
 console.log(allCardsWithTagsHTMLOrJSThatAreBookmarked);
