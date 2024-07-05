@@ -10,6 +10,4 @@ function createCirle() {
   return circle;
 }
 
-const circleElement = createCirle();
-
-export { createCirle, circleElement };
+export { createCirle };

@@ -10,6 +10,4 @@ function createPentagon() {
   return pentagon;
 }
 
-const pentagonElement = createPentagon();
-
-export { createPentagon, pentagonElement };
+export { createPentagon };

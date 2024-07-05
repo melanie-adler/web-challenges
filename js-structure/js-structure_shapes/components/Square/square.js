@@ -10,6 +10,4 @@ function createSquare() {
   return square;
 }
 
-const squareElement = createSquare();
-
-export { createSquare, squareElement };
+export { createSquare };

@@ -1,16 +1,13 @@
-import { createCirle, circleElement } from "./components/Circle/circle.js";
-import {
-  createPentagon,
-  pentagonElement,
-} from "./components/Pentagon/pentagon.js";
-import { createSquare, squareElement } from "./components/Square/square.js";
+import { createCirle } from "./components/Circle/circle.js";
+import { createPentagon } from "./components/Pentagon/pentagon.js";
+import { createSquare } from "./components/Square/square.js";
 
 console.clear();
 
 const root = document.getElementById("root");
 
-createCirle();
-createPentagon();
-createSquare();
+const circle = createCirle();
+const square = createSquare();
+const pentagon = createPentagon();
 
-root.append(circleElement, squareElement, pentagonElement);
+root.append(circle, square, pentagon);
