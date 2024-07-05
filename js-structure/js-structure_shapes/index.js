@@ -6,8 +6,4 @@ console.clear();
 
 const root = document.getElementById("root");
 
-const circle = createCirle();
-const square = createSquare();
-const pentagon = createPentagon();
-
-root.append(circle, square, pentagon);
+root.append(createCirle(), createSquare(), createPentagon());
