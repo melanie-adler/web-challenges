@@ -39,10 +39,11 @@ const EXAMPLE_DATA = {
 
 const url = "https://swapi.py4e.com/api/people";
 
-fetchDataAndRender();
+fetchDataAndRender2();
 
 // --v-- your code below this line --v--
 
+// Variante 1: all in one function
 async function fetchDataAndRender() {
   try {
     const response = await fetch(url);
@@ -53,6 +54,34 @@ async function fetchDataAndRender() {
       // renderElement(characterCard);
       renderElement(Card(character));
     });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// Variante 2: fetchData, renderAllcards, randerCard
+async function fetchData() {
+  const response = await fetch(url);
+  const data = await response.json();
+
+  return data;
+}
+
+function renderAllcards(characters) {
+  characters.forEach((character) => {
+    renderCard(character);
+  });
+}
+
+function renderCard(CardData) {
+  const card = Card(CardData);
+  renderElement(card);
+}
+
+async function fetchDataAndRender2() {
+  try {
+    const swapiData = await fetchData();
+    renderAllcards(swapiData.results);
   } catch (error) {
     console.log(error);
   }
