@@ -44,12 +44,16 @@ fetchDataAndRender();
 // --v-- your code below this line --v--
 
 async function fetchDataAndRender() {
-  const response = await fetch(url);
-  const data = await response.json();
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
 
-  data.results.forEach((character) => {
-    // const characterCard = Card(character);
-    // renderElement(characterCard);
-    renderElement(Card(character));
-  });
+    data.results.forEach((character) => {
+      // const characterCard = Card(character);
+      // renderElement(characterCard);
+      renderElement(Card(character));
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
