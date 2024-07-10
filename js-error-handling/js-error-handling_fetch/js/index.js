@@ -8,7 +8,7 @@ async function fetchUserData(url) {
   try {
     const response = await fetch(url);
 
-    const contentType = response.headers.get("content-type");
+    const contentType = response.headers.get("content-type").split(";");
     console.log(contentType);
 
     if (!response.ok) {
@@ -16,7 +16,9 @@ async function fetchUserData(url) {
     }
 
     if (!contentType.includes("application/json")) {
-      throw new Error(`Invalid data-type! Status Code: ${response.status}`);
+      throw new Error(
+        `Invalid content-type! Received content-type: ${contentType[0]}`
+      );
     }
 
     return await response.json();
