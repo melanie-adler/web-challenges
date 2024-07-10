@@ -7,9 +7,18 @@ const errorElement = document.querySelector("[data-js='error']");
 async function fetchUserData(url) {
   try {
     const response = await fetch(url);
+
+    const contentType = response.headers.get("content-type");
+    console.log(contentType);
+
     if (!response.ok) {
       throw new Error(`Failed to fetch data! Status Code: ${response.status}`);
     }
+
+    if (!contentType.includes("application/json")) {
+      throw new Error(`Invalid data-type! Status Code: ${response.status}`);
+    }
+
     return await response.json();
   } catch (error) {
     return { error: error.message };
