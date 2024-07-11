@@ -1,5 +1,4 @@
-// Store the cards in a global state
-const cards = [
+export const cards = [
   {
     question:
       "In the Kingdom Hearts series who provides the english voice for Master Eraqus?",
@@ -22,5 +21,3 @@ const cards = [
     isBookmarked: false,
   },
 ];
-
-export { cards };
