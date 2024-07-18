@@ -16,7 +16,6 @@ function NewArticle() {
           What is your favourite chrome extension?
         </label>
         <input
-          onSubmit={clearField}
           id="new-input"
           placeholder="Enter your fave here..."
           className="secrets-input"
@@ -34,8 +33,4 @@ function NewArticle() {
       </a>
     </article>
   );
-}
-
-function clearField(event) {
-  event.target.value = "";
 }
