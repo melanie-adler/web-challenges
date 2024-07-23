@@ -7,14 +7,12 @@ export default function FavoriteButton() {
   // this should be a state variable
   const [isFavorite, setFavorite] = useState(false);
 
-  function toggleFavorite() {
-    setFavorite(!isFavorite);
-  }
-
   return (
     <button
       className="favorite-button"
-      onClick={toggleFavorite}
+      onClick={() => {
+        setFavorite(!isFavorite);
+      }}
       aria-label="favorite"
     >
       {isFavorite ? <StarFilled /> : <Star />}
