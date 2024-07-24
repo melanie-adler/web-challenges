@@ -5,7 +5,3 @@
   height: 1px;
   background: var(--color-water-10);
 }
-
-.divider:last-child {
-  height: 0;
-}
