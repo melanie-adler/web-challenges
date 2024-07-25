@@ -7,11 +7,12 @@ export default function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // console.log(event.target.holiday.value);
-    // console.log(event.target.date.value);
 
     setHoliday(event.target.holiday.value);
     setDate(event.target.date.value);
+
+    event.target.reset();
+    event.target.holiday.focus();
   }
 
   return (
