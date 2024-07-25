@@ -10,6 +10,9 @@ export default function App() {
     event.preventDefault();
     setName(event.target.name.value);
     setEmail(event.target.email.value);
+
+    event.target.reset();
+    event.target.name.focus();
   }
 
   return (
