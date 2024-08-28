@@ -1,6 +1,7 @@
 import { volumes } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
+import BookCover from "../BookCover/BookCover";
 
 export default function BookDetails({ id }) {
   const volume = volumes.find(({ slug }) => slug === id);
@@ -22,12 +23,7 @@ export default function BookDetails({ id }) {
           <p>{volume.books[1].title}</p>
         </li>
       </ul>
-      <Image
-        src={`/../public/images/${id}.png`}
-        height={230}
-        width={140}
-        alt={`Book cover of "${volume.title}"`}
-      />
+      <BookCover id={id} title={volume.title} />
     </>
   );
 }

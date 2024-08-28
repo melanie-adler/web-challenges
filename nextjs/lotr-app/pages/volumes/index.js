@@ -1,3 +1,4 @@
+import BookCover from "@/components/BookCover/BookCover";
 import { introduction } from "@/lib/data";
 import Link from "next/link";
 
@@ -10,14 +11,19 @@ export default function Home() {
       <ul>
         <li>
           <Link href="/volumes/the-fellowship-of-the-ring">
+            <BookCover id="the-fellowship-of-the-ring" />
             The Fellowship of the Ring
           </Link>
         </li>
         <li>
-          <Link href="/volumes/the-two-towers">The Two Towers</Link>
+          <Link href="/volumes/the-two-towers">
+            <BookCover id="the-two-towers" />
+            The Two Towers
+          </Link>
         </li>
         <li>
           <Link href="/volumes/the-return-of-the-king">
+            <BookCover id="the-return-of-the-king" />
             The Return of the King
           </Link>
         </li>
