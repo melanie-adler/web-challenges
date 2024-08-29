@@ -1,11 +1,9 @@
 import { volumes } from "@/lib/data";
 import Link from "next/link";
-import Image from "next/image";
 import BookCover from "../BookCover/BookCover";
 
 export default function BookDetails({ id }) {
   const volume = volumes.find(({ slug }) => slug === id);
-  console.log(id);
   return (
     <>
       <Link href="/volumes">
