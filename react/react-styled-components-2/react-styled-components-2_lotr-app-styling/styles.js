@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${lora.style.fontFamily}, serif;
-    background-color: rgb(40,40,40) 
+    background-color: rgb(40,40,40); 
     color: rgb(212,209,205);
     padding: 1rem
   }
