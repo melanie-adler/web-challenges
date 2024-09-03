@@ -23,7 +23,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${lora.style.fontFamily}, serif;
     background-color: var(--color-earth); 
     color: var(--color-smoke);
-    padding: 1rem
+    padding: 1rem;
+    font-size: 18px
   }
 `;
 
@@ -37,10 +38,6 @@ export const StyledLink = styled(Link)`
 `;
 
 export const StyledTitle = styled.h1`
-  font-size: 68px;
+  font-size: 64px;
   line-height: 1.1;
-`;
-
-export const StyledIntro = styled.p`
-  font-size: 20px;
 `;

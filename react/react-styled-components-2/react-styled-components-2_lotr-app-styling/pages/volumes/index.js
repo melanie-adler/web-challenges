@@ -7,7 +7,7 @@ export default function Volumes() {
   return (
     <>
       <StyledTitle>The Lord of the Rings</StyledTitle>
-      <StyledIntro>{introduction}</StyledIntro>
+      <p>{introduction}</p>
       <div>
         <h2>All Volumes</h2>
         <StyledCoverList>
@@ -17,10 +17,10 @@ export default function Volumes() {
                 <Image
                   src={volume.cover}
                   alt={`Cover image of ${volume.title}`}
-                  width={140}
-                  height={230}
+                  width={126}
+                  height={207}
                 ></Image>
-                {volume.title}
+                <StyledBookTitle>{volume.title}</StyledBookTitle>
               </StyledLink>
             </li>
           ))}
@@ -36,4 +36,9 @@ const StyledCoverList = styled.ul`
   gap: 1rem;
   list-style-type: none;
   padding: 0;
+  font-size: 14px;
+`;
+
+const StyledBookTitle = styled.p`
+  width: 125px;
 `;

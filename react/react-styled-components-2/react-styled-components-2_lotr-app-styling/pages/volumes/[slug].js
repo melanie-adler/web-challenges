@@ -26,15 +26,17 @@ export default function VolumeDetail() {
   return (
     <>
       <StyledLink href="/volumes">
-        <ChevronLeft /> All Volumes
+        <StyledNavContainer>
+          <ChevronLeft /> <p>All Volumes</p>
+        </StyledNavContainer>
       </StyledLink>
       <StyledTitle>{title}</StyledTitle>
-      <StyledIntro>{description}</StyledIntro>
+      <p>{description}</p>
       <StyledContainer backgroundColor={color}>
         <StyledBookList>
           {books.map(({ ordinal, title }) => (
             <StyledBookListItem key={title}>
-              {ordinal}
+              <em>{ordinal}</em>
               <br></br> <strong>{title}</strong>
             </StyledBookListItem>
           ))}
@@ -49,14 +51,27 @@ export default function VolumeDetail() {
       {previousVolume ? (
         <StyledNextPageLeft>
           <StyledLink href={`/volumes/${previousVolume.slug}`}>
-            <ArrowLeft /> Previous Volume<br></br> {previousVolume.title}
+            <StyledPageNavContainer>
+              <ArrowLeft />{" "}
+              <p>
+                <em>Previous Volume</em>
+                <br></br>
+                {previousVolume.title}
+              </p>
+            </StyledPageNavContainer>
           </StyledLink>
         </StyledNextPageLeft>
       ) : null}
       {nextVolume ? (
         <StyledNextPageRight>
           <StyledLink href={`/volumes/${nextVolume.slug}`}>
-            Next Volume<br></br> {nextVolume.title} <ArrowRight />
+            <StyledPageNavContainer>
+              <p>
+                <em>Next Volume</em>
+                <br></br> {nextVolume.title}
+              </p>
+              <ArrowRight />
+            </StyledPageNavContainer>
           </StyledLink>
         </StyledNextPageRight>
       ) : null}
@@ -72,12 +87,25 @@ const StyledContainer = styled.div`
   padding: 1rem;
 `;
 
+const StyledNavContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const StyledPageNavContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
 const StyledBookList = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
   padding: 0;
+  width: 120px;
+  font-size: 16px;
 `;
 
 const StyledBookListItem = styled.li`
@@ -88,18 +116,18 @@ const StyledNextPageRight = styled.div`
   display: flex;
   justify-content: right;
   margin-top: 1rem;
-  text-align: center;
-  font-style: italic;
+  text-align: right;
   margin: auto;
   padding: 1rem;
+  font-size: 14px;
 `;
 
 const StyledNextPageLeft = styled.div`
   display: flex;
   justify-content: left;
   margin-top: 1rem;
-  text-align: center;
-  font-style: italic;
+  text-align: left;
   margin: auto;
   padding: 1rem;
+  font-size: 14px;
 `;
