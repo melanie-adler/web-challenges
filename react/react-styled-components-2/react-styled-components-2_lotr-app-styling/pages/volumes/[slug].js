@@ -67,7 +67,8 @@ export default function VolumeDetail() {
 const StyledContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  background-color: ${(props) => props.backgroundColor};
+  background: ${({ backgroundColor }) =>
+    `linear-gradient(to right, ${backgroundColor}, rgb(212,209,205))`};
   padding: 1rem;
 `;
 
