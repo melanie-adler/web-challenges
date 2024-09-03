@@ -1,7 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { volumes } from "../../lib/data";
+import ArrowLeft from "../../icons/arrow-left.svg";
+import ArrowRight from "../../icons/arrow-right.svg";
+import ChevronLeft from "../../icons/chevron-left.svg";
+import { StyledTitle, StyledIntro, StyledLink } from "@/styles";
+import styled from "styled-components";
 
 export default function VolumeDetail() {
   const router = useRouter();
@@ -17,40 +21,84 @@ export default function VolumeDetail() {
     return null;
   }
 
-  const { title, description, cover, books } = volume;
+  const { title, description, cover, books, color } = volume;
 
   return (
     <>
-      <Link href="/volumes">← All Volumes</Link>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <ul>
-        {books.map(({ ordinal, title }) => (
-          <li key={title}>
-            {ordinal}: <strong>{title}</strong>
-          </li>
-        ))}
-      </ul>
-      <Image
-        src={cover}
-        alt={`Cover image of ${title}`}
-        width={140}
-        height={230}
-      />
+      <StyledLink href="/volumes">
+        <ChevronLeft /> All Volumes
+      </StyledLink>
+      <StyledTitle>{title}</StyledTitle>
+      <StyledIntro>{description}</StyledIntro>
+      <StyledContainer backgroundColor={color}>
+        <StyledBookList>
+          {books.map(({ ordinal, title }) => (
+            <StyledBookListItem key={title}>
+              {ordinal}
+              <br></br> <strong>{title}</strong>
+            </StyledBookListItem>
+          ))}
+        </StyledBookList>
+        <Image
+          src={cover}
+          alt={`Cover image of ${title}`}
+          width={140}
+          height={230}
+        />
+      </StyledContainer>
       {previousVolume ? (
-        <div>
-          <Link href={`/volumes/${previousVolume.slug}`}>
-            ← Previous Volume: {previousVolume.title}
-          </Link>
-        </div>
+        <StyledNextPageLeft>
+          <StyledLink href={`/volumes/${previousVolume.slug}`}>
+            <ArrowLeft /> Previous Volume<br></br> {previousVolume.title}
+          </StyledLink>
+        </StyledNextPageLeft>
       ) : null}
       {nextVolume ? (
-        <div>
-          <Link href={`/volumes/${nextVolume.slug}`}>
-            Next Volume: {nextVolume.title} →
-          </Link>
-        </div>
+        <StyledNextPageRight>
+          <StyledLink href={`/volumes/${nextVolume.slug}`}>
+            Next Volume<br></br> {nextVolume.title} <ArrowRight />
+          </StyledLink>
+        </StyledNextPageRight>
       ) : null}
     </>
   );
 }
+
+const StyledContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  background-color: ${(props) => props.backgroundColor};
+  padding: 1rem;
+`;
+
+const StyledBookList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+`;
+
+const StyledBookListItem = styled.li`
+  list-style-type: none;
+`;
+
+const StyledNextPageRight = styled.div`
+  display: flex;
+  justify-content: right;
+  margin-top: 1rem;
+  text-align: center;
+  font-style: italic;
+  margin: auto;
+  padding: 1rem;
+`;
+
+const StyledNextPageLeft = styled.div`
+  display: flex;
+  justify-content: left;
+  margin-top: 1rem;
+  text-align: center;
+  font-style: italic;
+  margin: auto;
+  padding: 1rem;
+`;
