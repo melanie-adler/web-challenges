@@ -14,17 +14,22 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+  --color-earth: #282828;
+  --color-clouds: #f1f1f1;
+  --color-smoke: #d4d1cd;}
+
   body {
     font-family: ${lora.style.fontFamily}, serif;
-    background-color: rgb(40,40,40); 
-    color: rgb(212,209,205);
+    background-color: var(--color-earth); 
+    color: var(--color-smoke);
     padding: 1rem
   }
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: rgb(212, 209, 205);
+  color: var(--color-smoke);
 
   &:hover {
     text-decoration: underline;

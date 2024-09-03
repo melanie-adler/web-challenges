@@ -68,7 +68,7 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: space-around;
   background: ${({ backgroundColor }) =>
-    `linear-gradient(to right, ${backgroundColor}, rgb(212,209,205))`};
+    `linear-gradient(to right, ${backgroundColor}, var(--color-smoke))`};
   padding: 1rem;
 `;
 
