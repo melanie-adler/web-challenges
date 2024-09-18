@@ -5,8 +5,13 @@ export default async function handler(request, response) {
   await dbConnect();
 
   if (request.method === "GET") {
-    const products = await Product.find();
-    return response.status(200).json(products);
+    try {
+      const products = await Product.find().sort({ createdAt: -1 });
+      return response.status(200).json(products);
+    } catch (error) {
+      console.log(error);
+      return response.status(500).json({ error: error.message });
+    }
   }
 
   if (request.method === "POST") {
