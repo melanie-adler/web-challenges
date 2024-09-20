@@ -37,7 +37,6 @@ export default function Product() {
     if (response.ok) {
       mutate();
     }
-    return;
   }
 
   async function handleDeleteProduct(id) {
@@ -47,10 +46,6 @@ export default function Product() {
 
     if (response.ok) {
       router.push("/");
-    }
-    if (!response.ok) {
-      console.log(error);
-      response.status(400).json({ error: error.message });
     }
   }
 
