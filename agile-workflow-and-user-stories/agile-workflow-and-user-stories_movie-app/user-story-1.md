@@ -3,7 +3,7 @@
 ## Value Proposition
 
 **As a** `User` <br>
-**I want to** `see a list of current movies` <br>
+**I want to** `see a list of current movies (both classics and new releases)` <br>
 **so that** `I can explore and add movies to my watchlist` <br>
 
 ## Description
